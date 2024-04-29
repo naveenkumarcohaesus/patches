@@ -1,0 +1,10 @@
+restrict_route_by_ip.list:
+  route_name: entity.restrict_route.collection
+  title: 'Restricted routes'
+  base_route: entity.restrict_route.collection
+
+restrict_route_by_ip.settings:
+  route_name: restrict_route_by_ip.settings
+  title: 'Global settings'
+  base_route: entity.restrict_route.collection
+  weight: 100

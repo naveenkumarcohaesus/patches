@@ -1,0 +1,4 @@
+admin restrict route by ip:
+  title: 'Administer restrict route by IP'
+  restrict access: true
+  description: 'Give rights to administer restrict route by IP'

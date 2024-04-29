@@ -1,0 +1,7 @@
+entity_form:
+  version: 1.0
+  js:
+    js/restrict_route_by_ip.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

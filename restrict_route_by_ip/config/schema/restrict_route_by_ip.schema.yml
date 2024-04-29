@@ -1,0 +1,28 @@
+restrict_route_by_ip.restrict_route.*:
+  type: config_entity
+  label: 'RestrictRoute config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    route:
+      type: string
+      label: "Route"
+    methods:
+      type: array
+      label: "Methods"
+    params:
+      type: array
+      label: "Params"
+    ips:
+      type: array
+      label: "Ips"
+    operation:
+      type: boolean
+      label: 'Restricted'
+    status:
+      type: boolean
+      label: 'Enabled'

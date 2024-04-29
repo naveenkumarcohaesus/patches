@@ -1,0 +1,75 @@
+entity.restrict_route.collection:
+  path: '/admin/config/system/restrict_route_by_ip'
+  defaults:
+    _entity_list: 'restrict_route'
+    _title: 'Routes restricted by IP'
+  requirements:
+    _permission: 'admin restrict route by ip'
+
+entity.restrict_route.add_form:
+  path: '/admin/config/system/restrict_route_by_ip/add'
+  defaults:
+    _entity_form: 'restrict_route.add'
+    _title: 'Add route restriction configuration'
+  requirements:
+    _permission: 'admin restrict route by ip'
+
+entity.restrict_route.edit_form:
+  path: '/admin/config/system/restrict_route_by_ip/{restrict_route}'
+  defaults:
+    _entity_form: 'restrict_route.edit'
+    _title: 'Edit route restriction configuration'
+  requirements:
+    _permission: 'admin restrict route by ip'
+
+entity.restrict_route.delete_form:
+  path: '/admin/config/system/restrict_route_by_ip/{restrict_route}/delete'
+  defaults:
+    _entity_form: 'restrict_route.delete'
+    _title: 'Delete route restriction configuration'
+  requirements:
+    _permission: 'admin restrict route by ip'
+
+entity.restrict_route.enable:
+  path: '/admin/config/system/restrict_route_by_ip/{restrict_route}/enable'
+  defaults:
+    _controller: '\Drupal\restrict_route_by_ip\Controller\StatusController::enable'
+    _title: 'Enable a restricted route'
+  requirements:
+    _permission: 'admin restrict route by ip'
+  options:
+    parameters:
+      restrict_route:
+        type: entity:restrict_route
+
+entity.restrict_route.disable:
+  path: '/admin/config/system/restrict_route_by_ip/{restrict_route}/disable'
+  defaults:
+    _controller: '\Drupal\restrict_route_by_ip\Controller\StatusController::disable'
+    _title: 'Disable a restricted route'
+  requirements:
+    _permission: 'admin restrict route by ip'
+  options:
+    parameters:
+      restrict_route:
+        type: entity:restrict_route
+
+restrict_route_by_ip.settings:
+  path: '/admin/config/system/restrict_route_by_ip/settings'
+  defaults:
+    _form: '\Drupal\restrict_route_by_ip\Form\RestrictRouteGlobalForm'
+    _title: 'Restrict route - Settings'
+  requirements:
+    _permission: 'admin restrict route by ip'
+  options:
+    _admin_route: TRUE
+
+restrict_route_by_ip.impacted_path:
+  path: '/admin/config/system/restrict_route_by_ip/impacted_path'
+  defaults:
+    _controller: '\Drupal\restrict_route_by_ip\Controller\StatusController::impactedPath'
+    _title: 'Restrict route - Impacted path'
+  requirements:
+    _permission: 'admin restrict route by ip'
+  options:
+    _admin_route: TRUE

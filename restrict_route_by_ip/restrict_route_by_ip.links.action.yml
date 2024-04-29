@@ -1,0 +1,5 @@
+entity.restrict_route_by_ip.add_form:
+  route_name: 'entity.restrict_route.add_form'
+  title: 'Add restricted route'
+  appears_on:
+    - entity.restrict_route.collection

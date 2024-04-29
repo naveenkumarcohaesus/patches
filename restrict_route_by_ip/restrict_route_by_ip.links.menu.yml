@@ -1,0 +1,5 @@
+entity.restrict_route_by_ip.collection:
+  title: 'Restrict route by IP configuration'
+  parent: system.admin_config_system
+  description: 'Configure restricted routes.'
+  route_name: entity.restrict_route.collection

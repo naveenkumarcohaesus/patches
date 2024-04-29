@@ -1,0 +1,26 @@
+services:
+
+  restrict_route_by_ip.service:
+    class: Drupal\restrict_route_by_ip\Service\RestrictIpService
+    arguments:
+      - '@config.factory'
+      - '@request_stack'
+      - '@logger.factory'
+      - '@current_route_match'
+      - '@entity_type.manager'
+      - '@router.route_provider'
+      - '@messenger'
+
+  restrict_route_by_ip.route_subscriber:
+    class: Drupal\restrict_route_by_ip\Routing\RouteSubscriber
+    arguments:
+      - '@restrict_route_by_ip.service'
+    tags:
+      - { name: event_subscriber }
+
+  restrict_route_by_ip.services_access_checker:
+    class: Drupal\restrict_route_by_ip\Access\ServicesAccessCheck
+    arguments:
+      - '@restrict_route_by_ip.service'
+    tags:
+      - { name: access_check }
