@@ -1,0 +1,8 @@
+name: Progressive Web App Extras
+description: Builds on top of Progressive Web App to deliver extra functionality.
+type: module
+package: PWA
+core_version_requirement: ^9.3 || ^10
+configure: pwa_extras.settings
+dependencies:
+  - pwa

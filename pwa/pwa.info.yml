@@ -1,0 +1,9 @@
+name: 'Progressive Web App (PWA)'
+description: 'Provides progressive web app integration for your Drupal site.'
+type: module
+package: PWA
+core_version_requirement: ^9.3 || ^10
+php: ^8
+configure: pwa.config_manifest
+dependencies:
+  - drupal:file
